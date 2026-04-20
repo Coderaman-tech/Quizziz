@@ -3,9 +3,12 @@ import QuizStart from './QuizStart';
 import ProgressBar from './ProgressBar';
 import Timer from './Timer';
 import Questions from './Questions';
+import Results from './Results';
+
 function Quiz() {
   return (
-    <Questions/>
+    <Results/>
+    // <Questions/>
     // <Timer/>
     // <ProgressBar/>
     // <QuizStart/>
