@@ -5,8 +5,8 @@ import Questions from './Questions';
 import Results from './Results';
 import Timer from './Timer';
 import {useDispatch,useSelector} from "react-redux";
-import {sampleQuestions} from "../data/questions.js";
-import {setQuestions} from "../store/quizSlice.js";
+import {sampleQuestions} from "../data/questions";
+import {setQuestions} from "../store/quizSlice";
 import {useEffect} from "react";
 
 function Quiz() {
@@ -57,7 +57,7 @@ function Quiz() {
             <div className="bg-white rowunded-xl shadow-lg p-6">
                 <div className="flex flex-col md:flex-row md-items-center md:justify-between space-y-4 md:space-y-0">
                     <div className="flex-1">
-                      <ProgressBar/>
+                      <ProgressBar current={currentQuestionIndex+1} total={questions.length}/>
                     </div>
                     <div className="md:ml-6">
                       <Timer/>
