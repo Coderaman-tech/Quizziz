@@ -28,7 +28,7 @@ function QuizStart() {
                     <div className="flex items-center justify-center mb-4">
                         <BookOpen className="w-8 h-8 text-blue-600"/>
                     </div>
-                    <div className="text-2xl font-bold text-blue-800 mb-2">8</div>
+                    <div className="text-2xl font-bold text-blue-800 mb-2">5</div>
                     <div className="text-2xl font-medium">Questions</div>
 
                 </div>

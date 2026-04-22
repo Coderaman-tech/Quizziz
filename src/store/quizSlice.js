@@ -27,6 +27,22 @@ const quizSlice=createSlice({
             state.isTimerActive=true;
             state.showExplanation=false;
         },
+
+        answerQuestions:(state,action)=>{
+            const currentQuestion=state.questions[state.currentQuestionIndex];
+            const isCorrect=action.payload.selectedOption===currentQuestion.correctAnswer;
+            const answer={
+                questionId:currentQuestion.id,
+                selectedOption:action.payload.selectedOption,
+                isCorrect
+            };
+            state.answers.push(answer);
+            if(isCorrect){
+                state.score+=1;
+            }
+            state.showExplanation=true;
+        },
+
         decreamentTimer:(state)=>{
             if(state.timeLeft>0 && state.isTimerActive){
                 state.timeLeft-=1;
@@ -39,6 +55,6 @@ const quizSlice=createSlice({
     },
 });
 
-export const {setQuestions,startQuiz,decreamentTimer}=quizSlice.actions;
+export const {setQuestions,startQuiz,decreamentTimer,answerQuestions}=quizSlice.actions;
 
 export default quizSlice.reducer
