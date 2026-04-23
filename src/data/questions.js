@@ -9,7 +9,7 @@ export const sampleQuestions=[
       "To handle routing",
       "To optimize rendering"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "explanation": "useState is a React Hook used to add and manage state inside functional components."
   },
   {
@@ -22,7 +22,7 @@ export const sampleQuestions=[
       "useReducer",
       "useMemo"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "explanation": "useEffect is used to perform side effects like API calls, subscriptions, or DOM updates in functional components."
   },
   {
@@ -35,7 +35,7 @@ export const sampleQuestions=[
       "A state management library",
       "A backend framework"
     ],
-    "correctAnswer": 3,
+    "correctAnswer": 2,
     "explanation": "JSX stands for JavaScript XML and allows developers to write HTML-like syntax directly in JavaScript."
   },
   {
@@ -48,7 +48,7 @@ export const sampleQuestions=[
       "Redux",
       "Context API"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "explanation": "Props (short for properties) are used to pass data from a parent component to a child component in React."
   },
   {
@@ -61,7 +61,7 @@ export const sampleQuestions=[
       "To trigger re-render",
       "To bind event handlers"
     ],
-    "correctAnswer": 2,
+    "correctAnswer": 1,
     "explanation": "The key prop helps React identify which items have changed, are added, or removed, improving rendering performance."
   }
 ]
