@@ -1,7 +1,7 @@
 import React from 'react';
 import {CheckCircle, ArrowLeft,ArrowRight,XCircle} from "lucide-react";
 import {useDispatch,useSelector} from "react-redux";
-import {answerQuestions} from "../store/quizSlice";
+import {answerQuestions,nextQuestion,previousQuestion,resetQuiz} from "../store/quizSlice";
 
 function Questions() {
     const dispatch=useDispatch();
@@ -14,6 +14,16 @@ function Questions() {
         if(!currentAnswer){
             dispatch(answerQuestions({selectedOption:optionindex}));
         }
+    }
+
+    //handle nextQuestion
+    const handleNext=()=>{
+        dispatch(nextQuestion());
+    }
+
+    //handle previousQuestion
+    const handlePrevious=()=>{
+        dispatch(previousQuestion());
     }
     return (
     <div className="max-w-4xl mx-auto">
@@ -73,14 +83,19 @@ function Questions() {
 
         {/* {Display the buttons} */}
             <div className="flex justify-between items-center">
-                <button className="flex items-center space-x-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-5 disabled:cursor-not-allowed transition-all duration-200">
+               
+                <button className="flex items-center space-x-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-5 disabled:cursor-not-allowed transition-all duration-200" onClick={handlePrevious}>
                     <ArrowLeft size={20}/>
-                    <span>Previous</span>
+                    <span>Previous</span>     
                 </button>
-                 <button className="flex items-center space-x-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-5 disabled:cursor-not-allowed transition-all duration-200">
+                
+
+                {showExplanation && (
+                 <button className="flex items-center space-x-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 disabled:opacity-5 disabled:cursor-not-allowed transition-all duration-200" onClick={handleNext}>
                     <ArrowRight size={20}/>
-                    <span>Next</span>
+                    <span>{currentQuestionIndex===questions.length-1 ?"Finish Quiz": "Next"}</span>
                 </button>
+            )}
             </div>
         </div>
     </div>
